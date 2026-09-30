@@ -1,0 +1,76 @@
+{
+  "model": "/root/ysm/models/Qwen2.5-7B-Instruct",
+  "system": null,
+  "settings": {
+    "max_new_tokens": 256,
+    "max_seq_len": 2048,
+    "kv_cache_tokens": 2048,
+    "temperature": 0.6,
+    "top_p": 0.9,
+    "repetition_penalty": 1.1,
+    "seed": 42,
+    "debug": true
+  },
+  "events": [
+    {
+      "type": "turn",
+      "user": "你好，请用一句中文介绍自己。",
+      "assistant": "你好，我叫Qwen，是来自阿里云的大规模语言模型。",
+      "finish_reason": "eos",
+      "seconds": 1.097753619775176,
+      "dropped_history_turns": 0
+    },
+    {
+      "type": "turn",
+      "user": "请记住我的名字叫小林，只回答“记住了”。",
+      "assistant": "记住了。",
+      "finish_reason": "eos",
+      "seconds": 0.133082402870059,
+      "dropped_history_turns": 0
+    },
+    {
+      "type": "turn",
+      "user": "我叫什么名字？只回答名字。",
+      "assistant": "小林",
+      "finish_reason": "eos",
+      "seconds": 0.43719558231532574,
+      "dropped_history_turns": 0
+    },
+    {
+      "type": "turn",
+      "user": "2 + 3 等于多少？只输出数字。",
+      "assistant": "5",
+      "finish_reason": "eos",
+      "seconds": 0.1354899313300848,
+      "dropped_history_turns": 0
+    },
+    {
+      "type": "turn",
+      "user": "用一句话解释什么是大模型推理。",
+      "assistant": "大模型推理是指使用大规模训练得到的机器学习模型对新输入进行预测或生成任务的过程。",
+      "finish_reason": "eos",
+      "seconds": 0.5111571848392487,
+      "dropped_history_turns": 0
+    },
+    {
+      "type": "clear"
+    },
+    {
+      "type": "turn",
+      "user": "请把 apple 翻译成中文，只输出译文。",
+      "assistant": "苹果",
+      "finish_reason": "eos",
+      "seconds": 0.13287356309592724,
+      "dropped_history_turns": 0
+    }
+  ],
+  "validation": {
+    "multi_turn_name_recall": true,
+    "arithmetic": true,
+    "translation_after_clear": true,
+    "six_distinct_nonempty_replies": true,
+    "all_replies_end_at_eos": true,
+    "entry_point": "examples/run_generation.py",
+    "model_override": false
+  }
+}

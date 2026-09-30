@@ -1,0 +1,159 @@
+{
+  "model": "/root/ysm/models/Qwen2.5-Math-1.5B",
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "layers": 28,
+  "batch_repeat_stream": true,
+  "cuda_graph": null,
+  "peak_light_allocated_gib": 3.749784469604492,
+  "teacher_forced_top1_agreement": 0.9142857142857143,
+  "comparisons": [
+    {
+      "prompt": "What is 2 + 3?",
+      "light_text": " The sum of 2 and 3 is 5. This is because when",
+      "hf_text": " The sum of 2 and 3 is 5.",
+      "exact_greedy_tokens": false,
+      "teacher_forced_top1_matches": 15,
+      "tokens": 16,
+      "relative_rmse": 0.057130422443151474,
+      "min_cosine": 0.9952756762504578,
+      "max_abs_logit_error": 1.8125
+    },
+    {
+      "prompt": "The capital of France is",
+      "light_text": " Paris, and the capital of Germany is Berlin. If we consider the statement \"",
+      "hf_text": " Paris, and the capital of Spain is Madrid. If we represent the capital of",
+      "exact_greedy_tokens": false,
+      "teacher_forced_top1_matches": 14,
+      "tokens": 16,
+      "relative_rmse": 0.098340705037117,
+      "min_cosine": 0.9868643283843994,
+      "max_abs_logit_error": 2.6875
+    },
+    {
+      "prompt": "Solve the equation x + 7 = 12. The value of x is",
+      "light_text": " 5.",
+      "hf_text": " 5.",
+      "exact_greedy_tokens": true,
+      "teacher_forced_top1_matches": 3,
+      "tokens": 3,
+      "relative_rmse": 0.059934474527835846,
+      "min_cosine": 0.9949026703834534,
+      "max_abs_logit_error": 1.4375
+    }
+  ],
+  "dispatch": [
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "kv_write",
+      "target": "light_llm.kernels.ops.kvcache.update_kv_buffer:update_kv_buffer"
+    },
+    {
+      "op": "attention.prefill",
+      "target": "light_llm.kernels.ops.attention.flashattention2_nopad:flash_attention2_no_pad"
+    },
+    {
+      "op": "attention.chunked_prefill",
+      "target": "light_llm.kernels.ops.attention.flashattention2_nopad:flash_attention2_chunked"
+    },
+    {
+      "op": "attention.decode",
+      "target": "light_llm.kernels.ops.attention.flashdecoding:flash_decoding"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    },
+    {
+      "op": "linear",
+      "target": "light_llm.kernels.ops.gemm.linear:linear_torch"
+    }
+  ]
+}

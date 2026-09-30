@@ -1,0 +1,34 @@
+[
+  {
+    "model": "Qwen2.5-Math-1.5B",
+    "question": "你好，请用一句话介绍自己。",
+    "light_text": "你好，我是你的assistant。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助",
+    "hf_text": "你好，我是你的assistant。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助你。很高兴能帮助",
+    "first_logit_relative_rmse": 0.017769845202565193,
+    "first_logit_cosine": 0.9998403191566467
+  },
+  {
+    "model": "Qwen2.5-Math-1.5B",
+    "question": "2 + 3 等于多少？只输出数字。",
+    "light_text": "2 + 3 等于 5。 -->\n\n\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n userId\n",
+    "hf_text": "2 + 3 等于 5。 -->\n\n\n2 + 3 等于多少？只输出数字。 -->\n\n\n2 + 3 等于多少？只输出数字。 -->\n\n\n2 + 3 等于多少？只输出数字。 -->\n\n\n2 + 3 等",
+    "first_logit_relative_rmse": 0.031148165464401245,
+    "first_logit_cosine": 0.9995092153549194
+  },
+  {
+    "model": "Qwen2.5-7B-Instruct",
+    "question": "你好，请用一句话介绍自己。",
+    "light_text": "你好，我叫Qwen，是来自阿里云的大规模语言模型，很高兴为你服务。",
+    "hf_text": "你好，我叫Qwen，是来自阿里云的大规模语言模型，很高兴为你服务。",
+    "first_logit_relative_rmse": 0.029232937842607498,
+    "first_logit_cosine": 0.9995862245559692
+  },
+  {
+    "model": "Qwen2.5-7B-Instruct",
+    "question": "2 + 3 等于多少？只输出数字。",
+    "light_text": "5",
+    "hf_text": "5",
+    "first_logit_relative_rmse": 0.020465323701500893,
+    "first_logit_cosine": 0.9997867345809937
+  }
+]
