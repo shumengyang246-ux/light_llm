@@ -1,5 +1,6 @@
 # light_llm
 一个基于Triton算子和paged attention的轻量级大模型推理框架。
+
 A small decoder-only inference framework using the bundled Triton kernels.
 The verified configuration is Qwen2.5-Math-1.5B, BF16, one A100, and the existing
 `/opt/conda/envs/llm` environment. Start with eager execution and a bounded KV cache.
